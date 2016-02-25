@@ -1,8 +1,41 @@
 body 
 {
 
-background: rgb(255,255,255); /*fondo*/
-color: #0000000 ;/*color de letra*/
+background: black ;
+color: orange;/*color de letra*/
 margin: 0 auto;  /*margen externo*/
 max-width:1024px; /*ancho maximo*/
+}
+
+header 
+{
+background: black;
+border: 1px solid green ;
+border-radius: 5px;
+color:red;
+}
+
+header h1
+{
+
+	text-align: center;
+	color: orange;
+}
+
+header nav ul li
+{
+border:1px solid black;
+border-radius: 5px;
+background: black;
+color: white;
+display: inline-block; /*ROMPE CAJAS*/
+margin: 0px 65px 0px 0px; 
+
+padding: 12px;
+}
+
+header nav ul li:hover
+{
+background: orange;
+color: black;
 }
