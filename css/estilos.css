@@ -1,41 +1,40 @@
-body 
+body
 {
-
-background: black ;
-color: orange;/*color de letra*/
-margin: 0 auto;  /*margen externo*/
-max-width:1024px; /*ancho maximo*/
+	background: black;
+	color: gray;     		/*COLOR RGB*/
+	margin: 0 auto;
+	max-width: 1024px;		/*ANCHO MAXIMO*/
+	/*color: hotpink;*/
+	
 }
 
-header 
+body header
 {
-background: black;
-border: 1px solid white ;
-border-radius: 5px;
-color:red;
+background: black ; 	/* FONDO*/
+border: 1px solid gray; /* BORDER ALREDEDOR*/
+border-radius: 5px;		/*ESQUINAS PIXELES*/
+color:  white;			/* LETRAS*/
 }
 
-header h1
+body header h1
 {
-
-	text-align: center;
-	color: orange;
+text-align: center;		/* ALINEADO AL CENTRO */
 }
 
-header nav ul li
+body header nav ul li
 {
-border:1px solid black;
-border-radius: 5px;
-background: black;
-color: white;
-display: inline-block; /*ROMPE CAJAS*/
-margin: 0px 65px 0px 0px; 
-
-padding: 12px;
+	/*border: 1px solid gray; */
+	background: yellow;
+	border-radius: 5px;
+	color: black;
+	display: inline-block;
+	text-align:  center;
+	margin: 0px 55px;
+	padding: 10px;
 }
 
-header nav ul li:hover
+body header nav ul li:hover
 {
-background: orange;
-color: black;
+	background: orange;
+	color: white;
 }
