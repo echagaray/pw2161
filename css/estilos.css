@@ -1,11 +1,12 @@
 body
 {
 	background: black;
-	color: gray;     		/*COLOR RGB*/
+	color: yellow;     		/*COLOR RGB*/
 	margin: 0 auto;
 	max-width: 1024px;		/*ANCHO MAXIMO*/
 	/*color: hotpink;*/
-	
+	font-family: 'Indie Flower', cursive;
+
 }
 
 body header
@@ -14,18 +15,27 @@ background: black ; 	/* FONDO*/
 border: 1px solid gray; /* BORDER ALREDEDOR*/
 border-radius: 5px;		/*ESQUINAS PIXELES*/
 color:  white;			/* LETRAS*/
+font-family: 'Coming Soon', cursive;
 }
 
 body header h1
 {
 text-align: center;		/* ALINEADO AL CENTRO */
+font-family: 'Alex Brush', cursive;
+color:white;
+}
+
+body header h2
+{
+text-align: center;		/* ALINEADO AL CENTRO */
+font-family: 'Lovers Quarrel', cursive;
 }
 
 body header nav ul li
 {
 	/*border: 1px solid gray; */
-	background: yellow;
-	border-radius: 5px;
+	background: orange;
+	border-radius: 15px;
 	color: black;
 	display: inline-block;
 	text-align:  center;
