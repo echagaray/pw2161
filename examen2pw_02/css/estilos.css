@@ -1,0 +1,101 @@
+body{
+
+blackground: white;
+margin: 50px 30px;
+
+}
+
+body header{
+
+blackground: white;
+margin: 10px 30px;
+
+}
+
+#lema
+{
+	color: green;
+text-align: right;
+padding: 5px 560px;
+	
+margin: 45px 300px;
+}
+
+header nav ul li {
+color: black;
+display: inline-block;
+padding: 5px 10px;
+margin: 10px 60px;
+
+}
+
+
+#logo{
+margin: 40px -100px;
+padding: -390px -4	20px;
+text-align: left;
+
+}
+
+#home{
+color: pink;
+display: inline-block;	
+}
+body .fondo
+{
+	width: 20%;
+border-radius: 300px;
+text-align: left;
+
+}
+
+* article
+{
+margin: top -10px;
+display: inline-block;
+border-radius: 304px;
+}
+
+#sec1{
+text-align: center;
+margin: -300px -580px;
+display: inline-block;	
+}
+
+#art1{
+	
+	background: yellow;
+	color: white;
+	margin: 100px 590px 39px;
+	padding: 30px 10px 30px 10px;
+text-align: top;
+}
+#art2{
+background: cyan;
+	color: white;
+margin: 150px 400px 1px -490px;
+	padding: 30px 1px;
+text-align: top;
+}
+#art3{
+	background: peru;
+	color: white;
+	margin: 250px 200px 1px -360px;
+	padding: 30px 1px;
+text-align: top;
+}
+#seccion{
+	float: right;
+margin: 	50px 200px 1px -360px;
+padding: 30px 1px;
+}
+
+#pie{
+	text-align: right;
+}
+#candy{
+	color: pink;
+	font-size: 16px;
+	text-align: left;
+margin: 0 auto;
+}
