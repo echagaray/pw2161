@@ -67,21 +67,21 @@ display: inline-block;
 	background: yellow;
 	color: white;
 	margin: 100px 590px 39px;
-	padding: 30px 10px 30px 10px;
+	padding: 70px 50px 70px 50px;
 text-align: top;
 }
 #art2{
 background: cyan;
 	color: white;
 margin: 150px 400px 1px -490px;
-	padding: 30px 1px;
+	padding: 70px 50px 70px 50px;
 text-align: top;
 }
 #art3{
 	background: peru;
 	color: white;
 	margin: 250px 200px 1px -360px;
-	padding: 30px 1px;
+	padding: 70px 60px 70px 60px;
 text-align: top;
 }
 #seccion{
