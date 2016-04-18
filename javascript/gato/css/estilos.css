@@ -1,0 +1,36 @@
+body{
+
+	text-align: center;
+	font-size: 15px;
+	
+}
+
+
+#p1 {
+border-left: 14px;
+border: 6px;
+color red;
+
+border-collapse: 10px;
+}
+
+form input {
+border-collapse: 5px;
+color red;
+
+}
+
+#tabla{
+border-collapse: 23px;
+border: 6px;
+color white;
+background: white;
+border-collapse: 5px;
+}
+
+#p4 {
+border-left: 14px;
+border-collapse: 5px;
+color red;
+border color: red solid;
+}
