@@ -2,35 +2,102 @@ body{
 
 	text-align: center;
 	font-size: 15px;
+	width: 1080px;	
 	
 }
 
 
 #p1 {
-border-left: 14px;
-border: 6px;
-color red;
 
-border-collapse: 10px;
+border-right: red solid;
+border-bottom: red solid;
+
+
 }
 
+
+#p2 {
+
+border-right: red solid;
+border-bottom: red solid;
+border-left: red solid;
+
+}
+
+
+#p3 {
+
+border-bottom: red solid;
+border-left: red solid;
+
+
+
+}
+
+
+#p4 {
+
+
+border-bottom: red solid;
+border-right: red solid;
+border-top:red solid;	
+
+
+
+}
+
+#p5 {
+
+border-top:red solid;
+border-left: red solid;
+border-bottom: red solid;
+border-right: red solid;
+
+
+}
+
+#p6{
+border-bottom: red solid;
+border-left: red solid;
+
+
+}
+
+
+#p7 {
+
+border-bottom: red solid;
+border-left: red solid;
+
+}
+
+#p8 {
+border-bottom: red solid;
+border-left: red solid;
+
+}
+
+#p9{
+border-bottom: red solid;
+border-left: red solid;
+
+}
+
+
 form input {
-border-collapse: 5px;
+	border-bottom: red;
+border-collapse: 15px;
 color red;
 
 }
 
 #tabla{
-border-collapse: 23px;
+border-collapse: 3px;
 border: 6px;
 color white;
 background: white;
 border-collapse: 5px;
-}
 
-#p4 {
-border-left: 14px;
-border-collapse: 5px;
-color red;
-border color: red solid;
-}
+
+
+
