@@ -31,7 +31,7 @@ function numeros(num)
 {
 	//Escribir en el operando1
 	var valor=document.calculadora
-	if (operador=="") //vaciamos la caja
+	if (=="") //vaciamos la caja
 
 	{
 		if (valor=="0")	//concatenar los valores de num con los del operando1
