@@ -2,7 +2,7 @@ body{
 
 	text-align: center;
 	font-size: 15px;
-	width: 1080px;	
+
 
 
 	
@@ -92,20 +92,19 @@ body table input[type="button"] {
 
 border-collapse:collapse;
 color:red;
-height: 150px;
-width: 150px;
-font-size: 1em;
+
+width: 100%;
+font-size: 2em;
 
 }
 
-#tabla{
-
+#tabla{	width: 80%;	
 
 border-collapse:collapse;
-border: 6px;
+border: 1px;
 color:white;
 background: white;
-border-collapse: 5px;
+
 
 }
 

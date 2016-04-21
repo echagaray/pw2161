@@ -1,27 +1,43 @@
 //variable global
 var operador ="";
-
-function checa(nombreId)
+var contar =0;
+function checa(valor,nombreId)
 {
- 			
+ 			if (valor=="") {
+
+	if (contar%2==0) 
+	{
     //document.getElementById(nombreId).innerHTML="X";
     document.getElementById(nombreId).value="X";
-	/*
-	var valor=document.gato
-	if (operador=="") //vaciamos la caja
-
-	{
-		if document
-		
-		else {
-			if (valor=="0")	//concatenar los valores de num con los del operando1
-			document.calculadora.operando2.value =
-			document.calculadora.operando2value + num;
-		}
-			
+    contar=contar+1;
 	}
-*/
 
+
+
+
+else	
+		{
+    //document.getElementById(nombreId).innerHTML="X";
+    document.getElementById(nombreId).value="O";
+    contar=contar+1;
+	}
+	if (contar>=5)
+	{
+
+	}
+	}
+	
 }
+	
 
 
+ 			function win(valor,nombreId)
+ 			{
+
+ 				if (contar=p1) &&(nombreId=p2)&& (nombreId=p3) {
+ 					alert("Gano el jugador ".document.getElementById(nombreId));		
+ 				};
+
+ 			}
+ 		
+ 			};
