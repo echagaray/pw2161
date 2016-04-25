@@ -1,46 +1,32 @@
-	<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>gato</title>
 	<link rel="stylesheet" href="css/estilos.css">
+	<script src="js/gato.js"></script>
+	<title>Gato</title>
 </head>
 <body>
-	<script src="js/gato.js"></script>
-		<table id="tabla" border="1px" >
-
-			<tr>
-			</tr>
-
-
-			<tr>
-
-		
-			</tr>
-
-
-			<tr>
+	<header> <h1>Juego del gato </h1></header>
+	<form action="#" name="gato">
+		<table>
+			<tr id="s1">
+				<td class="c1"><input type="button" value="" id="s11"name="s11" onclick="seleccion(this.value,this.id)"></td>
 				
-				<br>
-<td   class="cuadrito"><input type="button" id="p1" onClick="checa(this.value,this.id)" value="" class="a1"></td>
-<td   class="cuadrito"><input type="button" id="p2" onClick="checa(this.value,this.id)" value="" class="a2"></td>
-<td   class="cuadrito"><input type="button" id="p3" onClick="checa(this.value,this.id)" value="" class="a3"></td>
-
+				<td class="c1"><input type="button" value="" id="s12"name="s12" onclick="seleccion(this.value,this.id)"></td>
+				<td><input type="button" value="" id="s13"name="s13" onclick="seleccion(this.value,this.id)"></td>
 			</tr>
-<br>	
+			<tr id="s2">
+				<td class="c1"><input type="button" value="" id="s21"name="s21" onclick="seleccion(this.value,this.id)"></td>
+				<td class="c1"><input type="button" value="" id="s22"name="s22" onclick="seleccion(this.value,this.id)"></td>
+				<td><input type="button" value="" id="s23"name="s23" onclick="seleccion(this.value,this.id)"></td>
+			</tr>
 			<tr>
-				
-<td   class="cuadrito"><input type="button" id="p4" onClick="checa(this.value,this.id)" value="" class="b1"></td>
-<td   class="cuadrito"><input type="button" id="p5" onClick="checa(this.value,this.id)" value="" class="b2"></td>
-<td   class="cuadrito"><input type="button" id="p6" onClick="checa(this.value,this.id)" value="" class="b3"></td>
-	<br>
+				<td class="c1"><input type="button" value="" id="s31"name="s31" onclick="seleccion(this.value,this.id)"></td>
+				<td class="c1"><input type="button" value="" id="s32"name="s32" onclick="seleccion(this.value,this.id)"></td>
+				<td><input type="button" value="" id="s33"name="s33" onclick="seleccion(this.value,this.id)"></td>
 			</tr>
-
-<tr>
-				
-<td   class="cuadrito"><input type="button" id="p7" onClick="checa(this.value,this.id)" value="" class="c1"></td>
-<td   class="cuadrito"><input type="button" id="p8" onClick="checa(this.value,this.id)" value="" class="c2"></td>
-<td   class="cuadrito"><input type="button" id="p9" onClick="checa(this.value,this.id)" value="" class="c3"></td>
-</table>
+		</table>
+	</form>
 </body>
 </html>
