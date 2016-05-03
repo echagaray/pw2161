@@ -18,7 +18,27 @@ $(document).on("ready,inicio");
 
 var clicBoton2= function()
 {
-	alert("boton 2");
+	beforeSend:function(){
+console.log("Espere..");
+	},
+	$.ajax({
+  url: 'https://randomuser.me/api/',
+  dataType: 'json',
+  success: function(data){
+  console.log(data);
+  alert(data.results[0].name.first+
+  	data.results[0].name.last);
+
+
+},
+error: function(xhr,error,throws){
+console.log("ocurrio un error");
+
+}
+  	);
+  }
+});
+     
 }	
 
 var clicBoton2= function(tecla)
