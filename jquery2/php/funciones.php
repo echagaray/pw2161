@@ -31,9 +31,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
 function validaEntrada()
 {
+  $respuesta=true;
 	$usuario= GetSQLValueString($_POST["usuario"],"text");
 	$clave =GetSQLValueString(md5($_POST["clave"]),"text");
-}
+
 
 //conecto ql servidor de bd
 //servidor, usuario, clave
@@ -46,9 +47,9 @@ $validar= sprintf("select usuario,clave from usuarios where usuario=%s  and clav
 $resultado =mysql_query($validar);
 //rpeguntamos si se trajo un registro
 if(mysql_num_rows($resultado )>0)
+  $respuesta = true;
 
-$respuesta = true;
-$salidaJSON = $array ('respuesta' => $respuesta);
+$salidaJSON = array('respuesta' => $respuesta);
 //devooldemos el resultado al JS
 print json_encode($salidaJSON);
 

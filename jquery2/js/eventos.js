@@ -31,13 +31,13 @@ var iniciaApp = function()
 
 
 		$.ajax({
-			beforeSend:function();{
+			beforeSend:function(){
 				console.log("validar al usuario")
 			},
 
 			cache:false,
 			type:"POST",
-			dataType: "json"
+			dataType: "json",
 			url:"php/funciones.php",
 			data:parametros,
 			success: function(response){
