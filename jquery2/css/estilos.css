@@ -17,9 +17,15 @@ header nav ul li button
 {
 	width: 89px;
 }
-#datosUsuario
+#datosUsuario{
 {
 	margin: 0 auto;
 	width: 320px;
 }
 
+#altaUsuarios{
+	margin: 0 auto;
+	width: 320px;
+	display: none;
+	
+}

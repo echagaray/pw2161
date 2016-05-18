@@ -41,6 +41,23 @@ var iniciaApp = function()
 			url:"php/funciones.php",
 			data:parametros,
 			success: function(response){
+				if (response.respuesta==true)
+				{
+					alert("usuario registrado correctamente");
+				}
+
+				else
+				{
+
+					alert("usuario no registrado correctamente");
+				}
+			},
+
+			error: function(xhr,ajax,throwError){
+
+			}
+
+
 				if (response.respuesta == true) //
 				{
 						$("datosUsuario").hide();
@@ -58,10 +75,31 @@ var iniciaApp = function()
 			}
 		}); 
 
+//funciones
+var Altas = function()
+{
+	//mostramos el formulario 
 
+	$("#altaUsuarios").show("slow";)
+}
+
+
+var AltaUsuarios = function()
+{
+	event.preventDefault();
+
+	//mostramos el formulario 
+alert($("#frmAltaUsuarios").serialize());
+var datos = $("#frmAltaUsuarios").serialize();
+var parametros = "accion=guardaUsuarios&"+datos+ 
+											"&id="+Math.random();
+}
 
 		console.log("Se disparó el submit");
 	}
 	$("#frmValidaEntrada").on("submit",validarEntrada);
+	$("#btnAltas").on("click",Altas);
+	$("#btnAltaUsuario","click",AltaUsuarios);
 }
+
 $(document).on("ready",iniciaApp);

@@ -56,6 +56,34 @@ print json_encode($salidaJSON);
 
 }
 
+function guardaUsuario()
+{
+  $usuario = GetSQLValueString($_POST["txtNombreUsuario"],"text");
+   $clave = GetSQLValueString($_POST["txtClaveUsuario"],"text");
+   $tipo = GetSQLValueString($_POST["txtTipoUsuario"],"text");
+   $depto = GetSQLValueString($_POST["txtDepartamento"],"long");
+
+   $respuesta= false;
+   //conecto ql servidor de bd
+//servidor, usuario, clave
+$conexion = mysql_connect("localhost","root","");
+//selecionar la bd
+
+mysql_select_db("usuarios");
+   //conecta ak servidor bd
+$validar= sprintf("insert into usuarios values(%s,%s,%s,%d)",$usuario,$clave),$tipo,$departamento;
+//ejecutamos la consulta
+
+mysql_query($guarda);
+//cuantos registros fueron afectados
+
+if (mysql_affected_rows()>0) {
+
+$respuesta=true;
+
+}
+$salidaJSON= $array ('respuesta' => ,$respuesta );
+print json_encode($salidaJSON);
 
 
 //menu principal
@@ -66,9 +94,10 @@ switch ($accion) {
 		# code...
 	validaEntrada();
 		break;
-	
+	case 'guardaUsuario':
+  guardaUsuario();
+    break;
 	default:
 		# code...
 		break;
 }
-?>
