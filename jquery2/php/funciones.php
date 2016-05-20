@@ -86,6 +86,24 @@ $salidaJSON= $array ('respuesta' => ,$respuesta );
 print json_encode($salidaJSON);
 
 
+function bajaUsuario()
+{
+  $usuario=GetSQLValueString($_POST["txtNombreUsuario"],"text");
+  mysql_connect("localhost","root","");
+  mysql_select_db("usuarios")
+  $baja=sprintf("delete from  usuarios where usuario=%s ,$usuario);
+  // $baja=sprintf("update usuarios set tipousuario='baja' where usuario=%s" ,$usuario");
+  mysql_query($baja)
+
+  if (mysql_affected_rows() >0) {
+    $respuesta=true;
+
+
+  }
+  $salidaJSON= array =('respuesta' => ,$respuesta );
+  print json_encode($salidaJSON);
+}
+$accion = $_POST["accion"];
 //menu principal
 
 
@@ -97,6 +115,10 @@ switch ($accion) {
 	case 'guardaUsuario':
   guardaUsuario();
     break;
+    case 'bajaUsuario':
+    bajaUsuario();
+      # code...
+      break;
 	default:
 		# code...
 		break;

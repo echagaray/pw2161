@@ -41,21 +41,7 @@ var iniciaApp = function()
 			url:"php/funciones.php",
 			data:parametros,
 			success: function(response){
-				if (response.respuesta==true)
-				{
-					alert("usuario registrado correctamente");
-				}
-
-				else
-				{
-
-					alert("usuario no registrado correctamente");
-				}
-			},
-
-			error: function(xhr,ajax,throwError){
-
-			}
+				
 
 
 				if (response.respuesta == true) //
@@ -70,17 +56,77 @@ var iniciaApp = function()
 
 			},
 			error:function(xhr,ajaxOptions,throwError){
-				console.log("Algo salio mal :(");
+				console.log("Algo salio mal :(");	
 			
 			}
 		}); 
+	}
+
 
 //funciones
 var Altas = function()
 {
 	//mostramos el formulario 
 
-	$("#altaUsuarios").show("slow";)
+	$("#altaUsuarios").show("slow");
+	$("#altaUsuarios h2").html("Alta de Usuarios");
+	//apago la funcion de AltaUsuario
+$("#frmAltaUsuarios").on("submit",AltaUsuario);
+//encendiendo la funcion de BajaUsuario para el mismo boton
+$("#frmAltaUsuarios").off("submit",BajaUsuario);
+}
+
+var Bajas function(){
+	$("#altaUsuarios").show("slow");
+$("#altaUsuarios h2").html("Baja Usuarios");
+//apago la funcion de AltaUsuario
+$("#frmAltaUsuarios").off("submit",AltaUsuario);
+//encendiendo la funcion de BajaUsuario para el mismo boton
+$("#frmAltaUsuarios").on("submit",BajaUsuario);
+
+}
+
+
+var BajaUsuario = function()
+{
+	event.preventDefault();
+
+//mostramos el formulario 
+//alert($("#frmAltaUsuarios").serialize());
+var datos = "txtNombreUsuario="+$("#txtNombreUsuario").val();
+var parametros = "accion=bajaUsuario&"+datos+ 
+											"&id="+Math.random();
+
+
+$.ajax({
+			beforeSend:function(){
+				console.log("-baja al usuario")
+			},
+
+			cache:false,
+			type:"POST",
+			dataType: "json",
+			url:"php/funciones.php",
+			data:parametros,
+			success: function(response){
+			
+
+				if (response.respuesta == true) //
+				{
+					alert("usuario dado de baja correctamente");	
+				}
+				else
+				{
+					alert("usuario no se pudo dar de baja correctamente");
+				}
+
+			},
+			error:function(xhr,ajaxOptions,throwError){
+				console.log("Algo salio mal :(");	
+			
+			}
+		}); 
+	}												
 }
 
 
@@ -89,7 +135,7 @@ var AltaUsuarios = function()
 	event.preventDefault();
 
 	//mostramos el formulario 
-alert($("#frmAltaUsuarios").serialize());
+//alert($("#frmAltaUsuarios").serialize());
 var datos = $("#frmAltaUsuarios").serialize();
 var parametros = "accion=guardaUsuarios&"+datos+ 
 											"&id="+Math.random();
@@ -99,7 +145,8 @@ var parametros = "accion=guardaUsuarios&"+datos+
 	}
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 	$("#btnAltas").on("click",Altas);
-	$("#btnAltaUsuario","click",AltaUsuarios);
+	$("#btnAltaUsuario").on"submit",AltaUsuarios);
+	$("#btnBajas","click",Bajas);
 }
 
 $(document).on("ready",iniciaApp);
