@@ -1,7 +1,5 @@
-<?php
-$accion = $_POST["accion"];
+<?php 
 //funciones
-
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
   $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -10,7 +8,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 
   switch ($theType) {
     case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";// ? y : son como if y else
       break;    
     case "long":
     case "int":
@@ -27,99 +25,88 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
       break;
   }
   return $theValue;
-} 
+}
 
-function validaEntrada()
+
+function cambios()
 {
-  $respuesta=true;
-	$usuario= GetSQLValueString($_POST["usuario"],"text");
-	$clave =GetSQLValueString(md5($_POST["clave"]),"text");
+	$IdAlmacen = GetSQLValueString($_POST["txtidAlmacen"],"text");
+	$Nombre   = GetSQLValueString($_POST["txtNombre"]),"text");
+	$Direccion1    = GetSQLValueString($_POST["txtDireccion1"],"text");
+	$Direccion2 = GetSQLValueString($_POST["txtDireccion2"],"text");
+	$CP = GetSQLValueString($_POST["txtcp"],"long");
+	$Localidad = GetSQLValueString($_POST["txtlocalidad"],"text");
+	$Provincia	 = GetSQLValueString($_POST["txtprovincia"],"text");
+	mysql_connect("localhost","root","");
+	mysql_select_db("examen");
+	
+	$update = sprintf("update almacenes set IdAlmacen where IdAlmacen=%d",$IdAlmacen)
+	mysql_query($update);
+	if(mysql_affected_rows() > 0)
+	{
+		$respuesta = true;
+	}
 
-
-//conecto ql servidor de bd
-//servidor, usuario, clave
-$conexion = mysql_connect("localhost","root","");
-//selecionar la bd
-
-mysql_select_db("usuarios");
-$validar= sprintf("select usuario,clave from usuarios where usuario=%s  and clave=%s limit 1",$usuario,$clave);
-
-$resultado =mysql_query($validar);
-//rpeguntamos si se trajo un registro
-if(mysql_num_rows($resultado )>0)
-  $respuesta = true;
-
-$salidaJSON = array('respuesta' => $respuesta);
-//devooldemos el resultado al JS
-print json_encode($salidaJSON);
-
+	$salidaJson = array('respuesta' => $respuesta);
+	print json_encode($salidaJson);
 
 }
 
-function guardaUsuario()
+function ConsultaAlmacen()
 {
-  $usuario = GetSQLValueString($_POST["txtNombreUsuario"],"text");
-   $clave = GetSQLValueString($_POST["txtClaveUsuario"],"text");
-   $tipo = GetSQLValueString($_POST["txtTipoUsuario"],"text");
-   $depto = GetSQLValueString($_POST["txtDepartamento"],"long");
+	$respuesta =  true;
+	mysql_connect("localhost","root","");
+	mysql_select_db("examen");
+	$consulta = "select IdAlmacen from almacenes ";
+	$resultado = mysql_query($consulta);
+	$tabla = "";
+	if(mysql_num_rows($resultado) > 0)
+	{
+		$respuesta = true;
+		$tabla.= "<tr>";
+		$tabla.= "<th>txtidAlmacen>th>";
+		$tabla.= "<th>txtNombre</th>";
+		$tabla.= "<th>txtDireccion1</th>";
+		$tabla.= "<th>txtDireccion2</th>";
+		$tabla.= "<th>txtcp</th>";
+		$tabla.= "<th>txtlocalidad</th>";
+		$tabla.= "<th>txtprovincia</th>";
 
-   $respuesta= false;
-   //conecto ql servidor de bd
-//servidor, usuario, clave
-$conexion = mysql_connect("localhost","root","");
-//selecionar la bd
-
-mysql_select_db("usuarios");
-   //conecta ak servidor bd
-$validar= sprintf("insert into usuarios values(%s,%s,%s,%d)",$usuario,$clave),$tipo,$departamento;
-//ejecutamos la consulta
-
-mysql_query($guarda);
-//cuantos registros fueron afectados
-
-if (mysql_affected_rows()>0) {
-
-$respuesta=true;
-
+		$tabla.= "</tr>";
+		while ($registro = mysql_fetch_array($resultado))
+		{
+		$tabla.= "<tr>";
+		$tabla.= "<th>txtidAlmacen>th>";
+		$tabla.= "<th>txtNombre</th>";
+		$tabla.= "<th>txtDireccion1</th>";
+		$tabla.= "<th>txtDireccion2</th>";
+		$tabla.= "<th>txtcp</th>";
+		$tabla.= "<th>txtlocalidad</th>";
+		$tabla.= "<th>txtprovincia</th>";
+		$tabla.= "</tr>";
+		}
+	}
+	$salidaJson = array('respuesta' => $respuesta,
+						 'tabla'    => $tabla );
 }
-$salidaJSON= $array ('respuesta' => ,$respuesta );
-print json_encode($salidaJSON);
 
-
-function bajaUsuario()
-{
-  $usuario=GetSQLValueString($_POST["txtNombreUsuario"],"text");
-  mysql_connect("localhost","root","");
-  mysql_select_db("usuarios")
-  $baja=sprintf("delete from  usuarios where usuario=%s ,$usuario);
-  // $baja=sprintf("update usuarios set tipousuario='baja' where usuario=%s" ,$usuario");
-  mysql_query($baja)
-
-  if (mysql_affected_rows() >0) {
-    $respuesta=true;
-
-
-  }
-  $salidaJSON= array =('respuesta' => ,$respuesta );
-  print json_encode($salidaJSON);
-}
 $accion = $_POST["accion"];
 //menu principal
-
-
 switch ($accion) {
-	case 'validaEntrada':
-		# code...
-	validaEntrada();
-		break;
-	case 'guardaUsuario':
-  guardaUsuario();
-    break;
-    case 'bajaUsuario':
-    bajaUsuario();
-      # code...
-      break;
+
+				
+				case 'cambios':
+					consultaAlmacen();
+					break;
+					# code...
+				case 'consultaAlmacen':
+					cambios();
+			
+					break;
+	
 	default:
 		# code...
 		break;
 }
+
+ ?>

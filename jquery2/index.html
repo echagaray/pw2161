@@ -10,57 +10,47 @@
 </head>
 <body>
 	<header>
-		<h1>Sistema de Ejemplo</h1>
+		<h1>Examen</h1>
 		<nav>
 			<ul> 
-				<li><button class="btn btn-default">Inicio</button></li>
-				<li><button id="btnB	ajas" class="btn btn-primary">Altas</button></li>
-				<li><button class="btn btn-primary">Bajas</button></li>
-				<li><button class="btn btn-warning">Cambios</button></li>
-				<li><button class="btn btn-danger">Consultas</button></li>
-				<li><button class="btn btn-info">Salir</button></li>
+				
+			
+				
 			</ul>
 		</nav>
 	</header>
 	<main>
 		<section>
 			<article>				
-				<article class="panel panel-primary" id="datosUsuario">
+				<article class="panel panel-primary" id="datosAlmacen">
 				  <article class="panel-heading">
 				    <h3 class="panel-title">Proporcione sus datos</h3>
 				  </article>
+				  <article id="consultaAlmacen" >
+			<input type="text" id="txtidAlmacen" required placeholder="id de Almacen" class="form-control" autofocus>
+				<input id="btnConsulta" type="submit" class="btn btn-success btn-lg btn-block" value="buscar" > 
+			<table class="table table-striped" id="	"></table>
+		</article>
 				  <article class="panel-body">
-				    <form action="#" id="frmValidaEntrada">
-				    	<input type="text" id="txtUsuario" required placeholder="Usuario" class="form-control" autofocus>
-				    	<input type="password" id="txtClave" required placeholder="Contraseña" class="form-control">
-				    	<input type="submit" class="btn btn-success btn-lg btn-block" value="Entrar">
+				    <form action="cambios" id="#cambiosAlmacen">
+				    	<input type="text" id="txtidAlmacen" required placeholder="Id almacen" class="form-control" autofocus>
+				    	<input type="text" id="txtNombre" required placeholder="Nombre" class="form-control">
+				    	<input type="text" id="txtDireccion1" required placeholder="Direccion1" class="form-control" autofocus>
+				    	<input type="text" id="txtDireccion2" required placeholder="Direccion2" class="form-control">
+				    	<input type="text" id="txtcp" required placeholder="CP" class="form-control" autofocus>
+				    	<input type="text" id="txtlocalidad" required placeholder="Localidad" class="form-control">
+				    	<input type="text" id="txtprovincia" required placeholder="Provincia" class="form-control">
+				    	<input id="btnConsulta" type="submit" class="btn btn-success btn-lg btn-block" value="buscar" > 
+
 				    </form>
 				  </article>
 				</article>
 			</article>
 		</section>
 
-		<section>
-			<article id="altaUsuarios">
-				
-				<h2>Alta de usuarios</h2>
-					<form action="#" id="frmAltaUsuarios" name ="frmAltaUsuarios">
-					<input type="text" class="form-control" id="txtNombreUsuario" required  placeholder="Usuario" name="txtNombreUsuario">
-					<br>
-					<input type="password" class="form-control" id="txtClaveUsuario" required  placeholder="Clave" name="txtClaveUsuario">
-					<br>
-					<select name="txtTipoUsuario" id="txtTipoUsuario" class="form-control">
-						<option value="Vigente">vigente</option>
-						<option value="Baja">baja</option>
+		
 
-					</select>
-					<br>
-					<input type="text" class="form-control" id="txtDepartamento" name="txtDepartamento" placeholder="Departamento">
-					<br>
-					<input type="submit" id="btnAltaUsuario" name="btnAltaUsuario" class="btn-success btn-lg btn-block" required>
-					</form>
-			</article>
-		</section>
+		
 	</main>
 	<footer></footer>
 </body>

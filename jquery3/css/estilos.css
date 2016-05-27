@@ -1,4 +1,4 @@
-body
+body 
 {
 	font-size: 16px;
 	margin: 0 auto;
@@ -6,7 +6,7 @@ body
 }
 header nav
 {
-	display: none;
+	display: none; /*desaparece el elemento, Visivility deja un hueco*/
 	text-align: center;
 }
 header nav ul li
@@ -17,22 +17,15 @@ header nav ul li button
 {
 	width: 89px;
 }
-#datosUsuario{
+#altaUsuarios, #consultaUsuarios
 {
+	display: none;
 	margin: 0 auto;
 	width: 320px;
 }
 
-#altaUsuarios{
-	display: none;
+#datosUsuario
+{
 	margin: 0 auto;
 	width: 320px;
-	
-}
-#ConsultaUsuarios{
-	
-	display: none;
-	margin: 0 auto;
-	width: 320px;
-	
 }
